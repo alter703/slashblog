@@ -30,5 +30,27 @@
         amet arcu vulputate, non posuere ipsum varius. Fusce vehicula elit in imperdiet interdum. Etiam egestas
         fermentum enim nec ultrices. Sed ac mi elementum, tincidunt dui eget, aliquet lacus.
     </p>
+
+    <button class="btn btn-secondary p-2" id="myButton">Click on me</button>
 </div>
+
+<script>
+    // Отримуємо посилання на кнопку за її id
+    var myButton = document.getElementById("myButton");
+
+    // Додаємо обробник події для натискання кнопки
+    myButton.addEventListener("click", function () {
+        // Дія, яка відбудеться при натисканні на кнопку
+        alert("Ви натиснули на кнопку!");
+    })
+
+    myButton.addEventListener("mouseover", function () {
+        myButton.innerHTML = 'CLICK ON ME!!';
+    })
+
+    myButton.addEventListener("mouseout", function () {
+        myButton.innerHTML = 'Click on me';
+    })
+
+</script>
 {% endblock content %}
