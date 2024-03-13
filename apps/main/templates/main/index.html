@@ -9,7 +9,9 @@
 <h1 class="display-3 text-warning">How are you?</h1>
 <p class="lead">This is the main site</p>
 
-<a href="#" class="btn btn-primary m-3">Click</a>
-<a href="{% url 'main:about' %}" class="btn btn-outline-info px-4">About us</a>
+<div class="btn-group text-center m-2 px-3 py-4">
+    <a href="#" class="btn btn-primary">Click</a>
+    <a href="{% url 'main:about' %}" class="btn btn-outline-info">About us</a>
+</div>
 
 {% endblock content %}
