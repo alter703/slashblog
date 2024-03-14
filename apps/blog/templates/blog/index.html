@@ -12,8 +12,17 @@
     {% for obj in elements %}
     <div class="text-center fs-4">{{ obj }}</div>
     {% endfor %}
+    <div class="comtainer">
+        <div class="row m-4">
+            <div class="col d-flex justify-content-center">
+                <a href="{% url 'main:index' %}">
+                    <p class="btn btn-success">Go to main page</p>
+                </a>
+            </div>
+        </div>
+
+    </div>
 
 </div>
-
 
 {% endblock content %}
