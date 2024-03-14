@@ -4,6 +4,16 @@
 
 {% block content %}
 
-<p class="h2">Bruh</p>
+<p class="h2 text-center text-muted">Bruh</p>
+
+<div class="container">
+
+    <p class="text-center fw-bold fs-2">Ми маємо такі теми:</p>
+    {% for obj in elements %}
+    <div class="text-center fs-4">{{ obj }}</div>
+    {% endfor %}
+
+</div>
+
 
 {% endblock content %}
