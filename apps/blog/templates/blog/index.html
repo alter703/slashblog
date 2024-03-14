@@ -7,16 +7,23 @@
     {% if not all_posts %}
     <p class="display-3 fw-bold text-center">It looks like there are no posts here...</p>
     {% else %}
-    <div class="row row-cols-3">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
         {% for post in all_posts %}
-        <a href="{% url 'blog:detail' post.id %}"
-            class="card border-black bg-black shadow-lg border-4 text-solid mx-auto my-3 p-0">
-            <img src="{{ post.image.url }}" class="card-img img-thumbnail" alt="NO IMAGE">
-            <div class="card-body">
-                <p class="card-text">{{ post.title }}</p>
-                <p class="card-text text-muted">{{ post.content|truncatechars:35 }}</p>
-            </div>
-        </a>
+        <div class="col d-inline-flex py-2">
+            <a href="{% url 'blog:detail' post.id %}"
+                class="card link-offset-2 link-underline link-underline-opacity-0 border-4 border-black bg-black shadow-lg d-flex"
+                style="width:100%">
+                <img src="{{ post.image.url }}" class="card-img-top" alt=" NO IMAGE">
+                <div class="card-body ">
+                    <div class="container my-3">
+                        <p class="card-text h3 fw-bold text-start">{{ post.title }}</p>
+                        <p class="card-text h6 fw-bold text-start">By: Admin</p>
+                        <p class="card-text text-muted text-start">{{ post.content|truncatechars:35 }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
         {% endfor %}
         {% endif %}
     </div>

@@ -22,7 +22,6 @@ def detail(request, post_id):
 
     post = Post.objects.get(pk=post_id)
 
-    print(post.image.url)
     content = {
         'post': post
     }
