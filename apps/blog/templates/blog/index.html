@@ -9,10 +9,14 @@
 <div class="container">
 
     <p class="text-center fw-bold fs-2">Ми маємо такі теми:</p>
+
     {% for obj in elements %}
-    <div class="text-center fs-4">{{ obj }}</div>
+    {% if obj.id != 2 %}
+    <div class="text-center fs-4">{{ obj.text }}</div>
+    {% endif %}
     {% endfor %}
-    <div class="comtainer">
+
+    <div class="container">
         <div class="row m-4">
             <div class="col d-flex justify-content-center">
                 <a href="{% url 'main:index' %}">
@@ -20,7 +24,6 @@
                 </a>
             </div>
         </div>
-
     </div>
 
 </div>
