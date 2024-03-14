@@ -7,9 +7,23 @@ app_name = 'blog'
 
 # Create your views here.
 def index(request):
+    all_posts = Post.objects.all()
 
-    elements = {
-        "elements": ({'id': 1, 'text':'Python'}, {'id': 2, 'text':'C#'}, {'id': 3, 'text':'C++'}, {'id': 4, 'text':'Java'})
+    for p in all_posts:
+        print(p)
+    content = {
+        'all_posts': all_posts
     }
 
-    return render(request, 'blog/index.html', elements)
+    return render(request, 'blog/index.html', content)
+
+
+def detail(request, post_id):
+
+    all_posts = Post.objects.get(pk=post_id)
+
+    content = {
+        'all_posts': all_posts
+    }
+
+    return render(request, 'blog/detail.html', content)

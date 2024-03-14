@@ -5,4 +5,5 @@ app_name = 'blog' # для {% url 'blog:<name>'%}
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('<int:post_id>', views.detail, name='detail')
 ]
