@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<p class="h1 text-center border-top border-warning border-4 p-2">About us</p>
+<p class="h1 text-center p-2">About us</p>
 
 <div class="container my-5">
     <p class="fw-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempor congue tellus, at
@@ -31,19 +31,14 @@
         fermentum enim nec ultrices. Sed ac mi elementum, tincidunt dui eget, aliquet lacus.
     </p>
 
-    <button class="btn btn-secondary p-2" id="myButton">Click on me</button>
+    <a href="{%url 'main:index' %}"><button class="btn btn-secondary p-2" id="myButton">Click on me</button></a>
 </div>
 
 <script>
     // Отримуємо посилання на кнопку за її id
     var myButton = document.getElementById("myButton");
 
-    // Додаємо обробник події для натискання кнопки
-    myButton.addEventListener("click", function () {
-        // Дія, яка відбудеться при натисканні на кнопку
-        alert("Ви натиснули на кнопку!");
-    })
-
+    // Додаємо обробник події для відслідковування миші(в межі чи поза межами кнопки)
     myButton.addEventListener("mouseover", function () {
         myButton.innerHTML = 'CLICK ON ME!!';
     })
