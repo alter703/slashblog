@@ -3,15 +3,18 @@
 {% block title %}Hello world{% endblock title %}
 
 {% block content %}
-<p class="h1 text-center bg-danger p-3">SlashBlog</p>
+<div class="container m-2">
+    <p class="h1 text-center bg-danger p-3">SlashBlog</p>
 
-<h1 class="display-1 text-primary">Hello</h1>
-<h1 class="display-3 text-warning">How are you?</h1>
-<p class="lead">This is the main site</p>
+    <h1 class="display-1 text-primary">Hello</h1>
+    <h1 class="display-3 text-warning">How are you?</h1>
+    <p class="lead">This is the main site</p>
 
-<div class="btn-group text-center m-4 px-3 py-4">
-    <a href="{% url 'blog:index' %}" class="btn btn-primary">Blogs</a>
-    <a href="{% url 'main:about' %}" class="btn btn-outline-info">About us</a>
+    <div class="btn-group text-center m-4 px-3 py-4">
+        <a href="{% url 'blog:index' %}" class="btn btn-primary p-3">Blogs</a>
+        <a href="{% url 'main:about' %}" class="btn btn-outline-info p-3">About us</a>
+    </div>
 </div>
+
 
 {% endblock content %}
