@@ -20,10 +20,11 @@ def index(request):
 
 def detail(request, post_id):
 
-    all_posts = Post.objects.get(pk=post_id)
+    post = Post.objects.get(pk=post_id)
 
+    print(post.image.url)
     content = {
-        'all_posts': all_posts
+        'post': post
     }
 
     return render(request, 'blog/detail.html', content)
