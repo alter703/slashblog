@@ -6,19 +6,60 @@
 <div class="container text-center">
     {% if not all_posts %}
     <p class="display-3 fw-bold text-center">It looks like there are no posts here...</p>
+    <button type="button" class="btn btn-light m-1 p-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Create Post
+    </button>
     {% else %}
-    <div class="row row-cols-3">
-        {% for post in all_posts %}
-        <a href="{% url 'blog:detail' post.id %}"
-            class="card border-black bg-black shadow-lg border-4 text-solid mx-auto my-3 p-0">
-            <img src="/{{ post.image }}" class="card-img" alt="NO IMAGE">
-            <div class="card-body">
-                <p class="card-text">{{ post.title }}</p>
-                <p class="card-text text-muted">{{ post.content|truncatechars:35 }}</p>
+    <div class="container bg-dark-subtle rounded-3 mt-6 my-4 py-1">
+        <div class="row row-cols-2">
+            <div class="col d-flex">
+                <button type="button" class="btn btn-light m-1 p-3" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">
+                    Create Post
+                </button>
             </div>
-        </a>
-        {% endfor %}
-        {% endif %}
+        </div>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+            {% for post in all_posts %}
+            <div class="col d-inline-flex py-2">
+                <a href="{% url 'blog:detail' post.id %}"
+                    class="card link-offset-2 link-underline link-underline-opacity-0 border-4 border-black bg-black shadow-sm"
+                    style="width:100%">
+                    <img src="{{ post.image.url }}" class="card-img rounded-1" alt="NO IMAGE">
+                    <div class="card-body ">
+                        <div class="container my-3">
+                            <p class="card-text h3 fw-bold text-start">{{ post.title }}</p>
+                            <p class="card-text h6 fw-bold text-start">By: Admin</p>
+                            <p class="card-text text-muted text-start">{{ post.content|truncatechars:35 }}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Create Post</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{% url 'blog:create' %}" method="POST" enctype="multipart/form-data">
+                        <!--головна форма для створення постів-->
+                        {% csrf_token %}
+                        {{ created_form }}
+                        <button class="btn btn-warning m-2 px-5 py-2">Publish</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock content %}
