@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),  #gogol.com/admin/
     path('blog/', include('apps.blog.urls')),  #gogol.com/blog/
     path('', include('apps.main.urls')),  #gogol.com/
+    path('users/', include('apps.users.urls')),  #gogol.com/
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = views.page_not_found
