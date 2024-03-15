@@ -7,3 +7,7 @@ class Post(models.Model):
     image = models.ImageField(upload_to='static')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created_at']
+
