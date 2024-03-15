@@ -1,8 +1,20 @@
-<div class="container mx-auto">
-    <nav class="navbar bg-dark border-bottom border-4 border-body p-3" data-bs-theme="dark">
-        <a href="/" class="navbar-brand fw-bold fs-3">SlashBlog</a>
-        <a href="#" class="btn btn-primary fs-4">
-            Hello
-        </a>
-    </nav>
-</div>
+<nav class="navbar navbar-expand-md">
+    <div class="container-xl mx-auto p-2">
+        <a href="{% url 'main:index' %}" class="navbar-brand"><img src="static\slash-square-fill-svgrepo-com.svg"
+                alt="Logo" width="30" height="24" class="d-inline-block align-text-top mx-1"><span
+                class="fw-bolder">SlashBlog</span></a>
+
+        <button class="navbar-toggler btn btn-primary p-2" type="button" data-bs-toggle="collapse"
+            data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false"
+            aria-label="Toggle navigation">Options</button>
+
+        <div class="collapse navbar-collapse justify-content-end aligh-center" id="main-nav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link h4" href="{% url 'blog:index' %}">Blogs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link h4" href="{% url 'main:about' %}">About us</a>
+                </li>
+        </div>
+</nav>
