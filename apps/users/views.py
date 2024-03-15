@@ -11,10 +11,10 @@ def login_view(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():
-            user = form.save()
+            user = form.get_user()
             login(request, user)
             return redirect('main:index')
-    print('----------------------------------')
+
     return render(request, 'users/login.html', {'form': form})
 
 
