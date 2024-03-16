@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-md bg-light-subtle">
+<nav class="navbar navbar-expand-md bg-light-subtle">
     <div class="container-xl mx-auto p-2">
         <a href="{% url 'main:index' %}" class="navbar-brand"><img src="\static\slash-square-fill-svgrepo-com.svg"
                 alt="Logo" width="30" height="24" class="d-inline-block align-text-top mx-1"><span
@@ -22,7 +22,7 @@
             <ul class="navbar-nav">
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link h4" href="#">Profile</a>
+                    <a class="nav-link h4" href="{% url 'users:profile' %}">Profile</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link h4" href="{% url 'users:logout' %}">Logout</a>

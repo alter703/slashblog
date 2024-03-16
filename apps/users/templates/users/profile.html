@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock title %}
+
+{% block content %}
+<div class="container bg-dark-subtle rounded-3 mt-6 my-4 py-1">
+    <p class="display-4 fw-bolder my-4 mx-3">{{ user.username }}</p>
+    <p class="h2 fw-semibold m-3">You became a part of our family {{ user.date_joined.date }}</p>
+    <p class="h2 fw-bolder m-3">{{ user.email }}</p>
+</div>
+{% endblock content %}
