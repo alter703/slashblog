@@ -22,7 +22,7 @@
             <ul class="navbar-nav">
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link h4" href="#">Profile</a>
+                    <a class="nav-link h4" href="{% url 'users:profile' %}">Profile</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link h4" href="{% url 'users:logout' %}">Logout</a>

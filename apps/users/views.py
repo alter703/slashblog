@@ -41,11 +41,9 @@ def logout_view(request):
 
 @login_required
 def profile_view(request):
-
-
-    user = Post.objects.filter(author=request.user)
+    posts = Post.objects.filter(author=request.user)
 
     context = {
-        
+        'posts': posts,
     }
-    return render(request, 'users/profile.html')
+    return render(request, 'users/profile.html', context)
