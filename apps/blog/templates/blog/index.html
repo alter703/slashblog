@@ -36,7 +36,7 @@
                         <div class="container my-3">
                             <p class="card-text h3 fw-bold text-start">{{ post.title }}</p>
                             <p class="card-text h6 fw-bold text-start">By: Admin</p>
-                            <p class="card-text text-muted text-start">{{ post.content|truncatechars:35 }}</p>
+                            <p class="card-text text-muted text-start">{{ post.content|truncatewords:12 }}</p>
                         </div>
                     </div>
                 </a>
