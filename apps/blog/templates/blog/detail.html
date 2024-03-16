@@ -12,7 +12,7 @@
     {% endif %}" class="img-responsive rounded mx-auto d-block my-3" alt="Responsive image" style="width: 840px;">
     <hr class="border border-light">
     <p class="display-3 fw-bolder my-4">{{ post.title }}</p>
-    <p class="display-6 fw-semibold my-4">By: Admin</p>
+    <p class="display-6 fw-semibold my-4">By: {{ post.author }}</p>
     <div class="h4 fw-light my-5 lh-base">{{ post.content|linebreaks }}</div>
 </div>
 

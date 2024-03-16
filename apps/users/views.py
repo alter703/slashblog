@@ -4,6 +4,9 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 
+from apps.blog.models import Post
+
+
 # Create your views here.
 
 def login_view(request):
@@ -34,3 +37,15 @@ def register_view(request):
 def logout_view(request):
     logout(request)
     return redirect('main:index')
+
+
+@login_required
+def profile_view(request):
+
+
+    user = Post.objects.filter(author=request.user)
+
+    context = {
+        
+    }
+    return render(request, 'users/profile.html')
